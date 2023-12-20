@@ -1,25 +1,24 @@
 {
   "name": "serverless-neon-prisma-graphql",
-  "module": "index.ts",
+  "module": "serverless.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun --watch src/index.ts",
-    "build": "bun build src/index.ts",
-    "start": "NODE_ENV=production bun src/index.ts",
-    "test": "bun test"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
+    "prisma:generate": "npx prisma generate",
+    "build": "tsc",
+    "deploy": "npm run prisma:generate && npm run build && serverless deploy"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "@apollo/server": "^4.9.5",
-    "@elysiajs/apollo": "^0.7.0",
-    "@prisma/client": "^5.7.0",
-    "elysia": "^0.7.30",
+    "@as-integrations/aws-lambda": "^3.1.0",
     "graphql": "^16.8.1",
-    "prisma": "^5.7.0"
+    "@prisma/client": "^4.16.2"
+  },
+  "devDependencies": {
+    "prisma": "^4.15.0",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-plugin-typescript": "^2.1.5"
   }
 }

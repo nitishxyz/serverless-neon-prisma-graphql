@@ -5,7 +5,7 @@
   "scripts": {
     "prisma:generate": "cd src && npx prisma generate && cd -",
     "build": "tsc",
-    "deploy": "npm run prisma:generate && npm run build && serverless deploy"
+    "deploy": "npm run prisma:generate && npm run build && npx serverless deploy"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

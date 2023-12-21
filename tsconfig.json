@@ -10,7 +10,7 @@
     "outDir": "lib",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/*.ts", "src/**/*.prisma", "serverless.ts"],
+  "include": ["src/*.ts", "**/*.prisma", "serverless.ts"],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",

@@ -3,7 +3,7 @@
   "module": "serverless.ts",
   "type": "module",
   "scripts": {
-    "prisma:generate": "cd src && npx prisma generate && cd -",
+    "prisma:generate": "npx prisma generate",
     "build": "tsc",
     "deploy": "npm run prisma:generate && npm run build && npx serverless deploy"
   },
